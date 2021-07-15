@@ -1,0 +1,68 @@
+.pay-step-box {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.pay-step-box > h1 {
+  color: #00c1ad;
+}
+
+.pay-step-box > h1[type='fail'] {
+  color: #f97242;
+}
+
+.pay-qrcode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2vw;
+  border: 1px solid #e3e3e3;
+  border-radius: 1vw;
+}
+
+.pay-step-box > span {
+  font-size: 12px;
+  color: #999999;
+}
+
+.pay-step-box > span[type='fail'] {
+  color: #f97242;
+}
+
+.pay-tip {
+  margin-top: 4vw;
+}
+
+.pay-result {
+  width: 18vw;
+  height: 18vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.owe-tip {
+  color: #00c1ad;
+}
+
+.owe-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.owe-item {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.owe-item > span {
+  border-bottom: 1px solid #e3e3e3;
+  padding-bottom: 2vw;
+  display: flex;
+  flex: 1;
+  text-align: center;
+}

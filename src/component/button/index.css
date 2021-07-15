@@ -1,0 +1,25 @@
+.gh-button {
+  width: 50vw;
+  height: 9vw;
+  border-radius: 1vw;
+  font-weight: normal;
+  font-stretch: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin: 0 auto;
+  margin-top: 5vw;
+  font-size: 12px;
+  box-sizing: border-box;
+}
+
+.gh-button[type='primary'] {
+  background-color: #00c1ad;
+  color: #ffffff;
+}
+
+.gh-button[type='warn'] {
+  background-color: #fe8e4b;
+  color: #fff;
+}

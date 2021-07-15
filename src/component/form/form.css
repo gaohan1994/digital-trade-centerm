@@ -1,0 +1,132 @@
+/* .my-costom-keyboard {
+  padding: 0px !important;
+  border: 1px solid #f9f9f9;
+} */
+
+/* .numeric-theme .hg-button:not(:last-child) {
+  margin: 0 !important;
+  border-radius: 0px !important;
+  border: 1px solid #f9f9f9 !important;
+} */
+
+.hg-theme-default {
+  border-radius: 0px !important;
+  padding: 0px !important;
+}
+
+.numeric-theme .hg-row:not(:last-child) {
+  margin-bottom: 0px !important;
+}
+
+.numeric-theme .hg-button:nth-child(n + 4) {
+  margin-top: 0px !important;
+  margin-right: 0px !important;
+}
+
+.hg-button {
+  border-bottom: 0px !important;
+  box-shadow: 0 0 3px -1px #aaaaaa;
+}
+
+.hg-button.hg-standardBtn {
+  margin: 0px !important;
+  border-radius: 0px !important;
+}
+
+.hg-button.hg-functionBtn {
+  margin: 0px !important;
+  border-radius: 0px !important;
+}
+
+.keyboard-box {
+  width: 58vw;
+  margin: 0 auto;
+}
+
+.keyboard-border {
+  margin-top: 3vw;
+  box-shadow: 0 0 3px -1px rgb(0 0 0 / 30%);
+}
+
+.hg-button-bksp {
+  background-color: #fff !important;
+}
+
+.hg-button-container {
+  margin: 0px !important;
+}
+
+/* .hg-rows {
+  
+} */
+
+.simple-keyboard.numeric-theme {
+  /* max-width: 350px; */
+  margin: 0 auto;
+}
+
+.simple-keyboard.numeric-theme .hg-button {
+  /* width: 25% !important; */
+  width: 13vw !important;
+  height: 9vw;
+}
+
+.simple-keyboard .hg-row .hg-button-container {
+  display: flex !important;
+  flex-flow: wrap !important;
+  width: 75% !important;
+}
+
+.simple-keyboard.numeric-theme .hg-button {
+  height: 9vw;
+}
+
+.simple-keyboard.numeric-theme .hg-button.hg-standardBtn {
+  /* max-width: 55px; */
+}
+
+.simple-keyboard.numeric-theme .hg-button.hg-button-bksp {
+  background: lightgray;
+}
+
+.simple-keyboard.numeric-theme .hg-button.hg-button-enter {
+  height: auto;
+  background: #00c1ad;
+  color: white;
+}
+
+.simple-keyboard .hg-row .hg-button-container .hg-button:nth-child(3n) {
+  margin-right: 0;
+}
+
+.simple-keyboard .hg-row .hg-button-container .hg-button:nth-child(n + 4) {
+  margin-top: 5px;
+}
+
+.info-box {
+  margin: 0 auto;
+  width: 71vw;
+  padding: 4vw;
+  border: 1px solid #e3e3e3;
+  border-radius: 1vw;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.info-item:not(:last-child) {
+  margin-bottom: 2vw;
+}
+
+.info-item .info-title {
+  font-size: 12px;
+  color: #999999;
+}
+.info-item .info-value {
+  font-size: 12px;
+  color: #333333;
+}
