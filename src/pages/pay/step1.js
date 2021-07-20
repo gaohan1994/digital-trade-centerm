@@ -27,7 +27,6 @@ const PayStep1 = (props) => {
 
     Toast.loading('加载中');
     const result = await fetchUserInfo(params);
-    console.log('result: ', result);
     Toast.hide();
 
     if (result.response.code !== ResponseCode.success) {

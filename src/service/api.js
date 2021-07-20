@@ -1,7 +1,7 @@
 import { api } from './service';
 
 export const AcqCode = '283499';
-export const MerchantId = '105000248164385';
+export const MerchantId = '105000049008277';
 
 export const ResponseCode = {
   success: 'SUCCESS',

@@ -9,7 +9,12 @@ import { useHistory } from 'react-router-dom';
 
 const PayStep4 = (props) => {
   const history = useHistory();
-  const { userInfo, userPayInfo, payResult } = props;
+  const {
+    userInfo,
+    userPayInfo,
+    userPayAmount = 0,
+    payResult = { status: 'success' },
+  } = props;
   /**
    * 调用通知结果接口
    *
@@ -32,11 +37,23 @@ const PayStep4 = (props) => {
       rcvbl_info_list: userInfo.rcvblInfoList.map((item) => {
         return {
           cost_id: item.onlyCostId,
-          ow_amt: item.owAmt,
-          dflt_pny: item.dfltPny,
+          ow_amt: numeral(item.owAmt).format('0.00'),
+          dflt_pny: numeral(item.dfltPny).format('0.00'),
         };
       }),
     };
+    // const params = {
+    //   acq_code: AcqCode,
+    //   usr_id: '3206622491320',
+    //   order_no: 'RITZDQGKT1626747089220',
+    //   rcvbl_info_list: [
+    //     {
+    //       cost_id: '3221032400025208',
+    //       ow_amt: '6.00',
+    //       dflt_pny: '0.00',
+    //     },
+    //   ],
+    // };
     await fetchOwPayNotice(params);
   };
 
@@ -52,7 +69,7 @@ const PayStep4 = (props) => {
           style={{ backgroundImage: `url(${bgsuccess})` }}
         />
         <span className="pay-tip">缴费成功！</span>
-        <h1>￥{numeral(0).format('0.00')}</h1>
+        <h1>￥{numeral(userPayAmount).format('0.00')}</h1>
 
         <GhButton onClick={backToTop}>确定</GhButton>
       </div>

@@ -61,9 +61,13 @@ const Step4 = (props) => {
     <div className="pay-step-box">
       <h1>￥{numeral(userPayAmount).format('0.00')}</h1>
       <div className="pay-qrcode">
-        <QRCode width={260} height={260} value={userPayInfo.pay_url} />
+        <QRCode
+          width={400}
+          height={400}
+          value={decodeURIComponent(userPayInfo.pay_url)}
+        />
       </div>
-      <span className="pay-tip">请使用手机端APP扫描上方二维码</span>
+      <span className="pay-tip">请使用数字人民币APP扫描上方二维码</span>
     </div>
   );
 };

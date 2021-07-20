@@ -1,11 +1,14 @@
 import HomePage from './home/home';
 import { Switch, Route, HashRouter, useHistory } from 'react-router-dom';
 import PayPage from './pay';
-import { NavBar, Icon } from 'antd-mobile';
+import { NavBar, Icon, Toast } from 'antd-mobile';
 import { createSlice } from '@reduxjs/toolkit';
 import { useSelector } from 'react-redux';
 import InfoPage from './info';
 import OwePage from './owe';
+import Navbar from '../component/navbar';
+import Demo from './demo';
+import { useEffect } from 'react';
 
 const App = () => {
   return (
@@ -47,17 +50,28 @@ const MainPage = () => {
 
   const history = useHistory();
 
+  useEffect(() => {
+    // Toast.config({ duration: 100 });
+  }, []);
+
   const onBack = () => {
     history.goBack();
   };
 
   return (
     <>
-      <NavBar icon={<Icon onClick={onBack} type="left" />}>{title}</NavBar>
+      <NavBar
+        leftContent={<div className="header-icon" onClick={onBack} />}
+        // icon={<Icon className="header-icon" onClick={onBack} type="left" />}
+      >
+        {title}
+      </NavBar>
+      {/* <Navbar /> */}
       <Switch>
         <Route path="/pay" component={PayPage} />
         <Route path="/owe" component={OwePage} />
         <Route path="/info" component={InfoPage} />
+        <Route path="/demo" component={Demo} />
       </Switch>
     </>
   );

@@ -26,13 +26,6 @@ const Step2 = (props) => {
     { title: '用户所属单位', value: userInfo.usrBlngUnitNm },
     { title: '用电户名', value: userInfo.usrAccNm },
     { title: '用电地址', value: userInfo.adr },
-    // { title: '是否销户', value: userInfo.wthrAlrdyCnclAcct  },
-    // { title: '交易金额', value: '￥100' },
-    // { title: '订单号', value: '123456' },
-    // { title: '交易时间', value: '20202020202020' },
-    // { title: '卡号', value: '6110021994042520211' },
-    // { title: '流水号', value: '000041' },
-    // { title: '参考号', value: '00005149994' },
   ];
   return (
     <>

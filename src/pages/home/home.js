@@ -40,6 +40,17 @@ const HomeCard = (props) => {
   );
 };
 
+/**
+ * 退出 webview
+ *
+ * 原生 方法
+ */
+const onQuit = () => {
+  if (window.backToActivity) {
+    window.backToActivity.exit();
+  }
+};
+
 const HomePage = () => {
   const history = useHistory();
 
@@ -67,7 +78,7 @@ const HomePage = () => {
     <div className="home-bg">
       <section className="home-bar">
         <div className="home-bar-logo" />
-        <div className="home-bar-quit" />
+        <div className="home-bar-quit" onClick={onQuit} />
       </section>
       <div className="home-main">
         {homeItems.map((item) => (

@@ -2,7 +2,12 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import FormKeyboard from '../../component/form/form';
 import { Toast } from 'antd-mobile';
-import { ResponseCode, AcqCode, fetchOwInfoQuery } from '../../service/api';
+import {
+  ResponseCode,
+  AcqCode,
+  fetchOwInfoQuery,
+  fetchUserInfo,
+} from '../../service/api';
 
 const Step1 = (props) => {
   const { setUserInfo } = props;
@@ -27,6 +32,7 @@ const Step1 = (props) => {
    * 3206100224570
    * 3206100419381
    * 3206100419635
+   *
    */
   const onSubmit = async (value) => {
     if (value === '') {
@@ -39,34 +45,14 @@ const Step1 = (props) => {
       acq_code: AcqCode,
     };
 
-    // const data = [
-    //   '3206100113560',
-    //   '3206100112595',
-    //   '3206100112581',
-    //   '3206100113532',
-    //   '3206100419507',
-    //   '3206100419750',
-    //   '3206100419286',
-    //   '3206100419222',
-    //   '3206100113571',
-    //   '3206100114534',
-    //   '3206100114526',
-    //   '3206100224570',
-    //   '3206100419381',
-    //   '3206100419635',
-    // ];
-
-    // data.forEach((item) => {
-    //   const itemparam = {
-    //     usr_id: item,
-    //     acq_code: AcqCode,
-    //   };
-    //   fetchOwInfoQuery(itemparam).then((result) => {
-    //     console.log('item result', result);
-    //   });
-    // });
-
+    /**
+     * 后台问题 请求欠费之前要先请求一下 fetchUserInfo
+     *
+     * @function fetchUserInfo
+     */
     Toast.loading('加载中');
+    await fetchUserInfo(params);
+
     const result = await fetchOwInfoQuery(params);
     Toast.hide();
 

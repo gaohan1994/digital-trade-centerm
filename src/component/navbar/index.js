@@ -1,7 +1,9 @@
+import './index.css';
+
 const Navbar = (props) => {
   const { children } = props;
   return (
-    <header>
+    <header className="header">
       navbar
       {children}
     </header>

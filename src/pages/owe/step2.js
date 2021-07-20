@@ -22,6 +22,11 @@ const Step2 = (props) => {
   const [visible, setVisible] = useState(false);
 
   const onSubmit = async (value) => {
+    if (price === 0) {
+      Toast.show('您没有欠费信息');
+      return;
+    }
+
     const orderNo = getRandomString().toUpperCase() + `${new Date().getTime()}`;
 
     const params = {
@@ -30,7 +35,7 @@ const Step2 = (props) => {
       usr_id: userInfo.usrId,
       order_no: orderNo,
       fee_mod: '0',
-      trade_at: price,
+      trade_at: numeral(price).format('0.00'),
       rcvbl_info_list: userInfo.rcvblInfoList.map((item) => {
         return {
           cost_id: item.onlyCostId,
@@ -114,6 +119,7 @@ const Step2 = (props) => {
         footer={null}
         closeIcon={null}
         title={null}
+        centered={true}
       >
         <div className="owe-form">
           <div className="owe-item">
@@ -126,9 +132,9 @@ const Step2 = (props) => {
             userInfo.rcvblInfoList.map((item) => {
               return (
                 <div className="owe-item" key={item.costYrMo}>
-                  <span>{item.costYrMo}</span>
-                  <span>{item.owAmt}</span>
-                  <span>{item.dfltPny}</span>
+                  <span>{item.costYrMo || ' '}</span>
+                  <span>{numeral(item.owAmt).format('0.00') || '0.00'}</span>
+                  <span>{numeral(item.dfltPny).format('0.00') || '0.00'}</span>
                 </div>
               );
             })}

@@ -6,6 +6,7 @@ import {
   fetchTradeUnified,
   ResponseCode,
 } from '../../service/api';
+import numeral from 'numeral';
 import { useHistory } from 'react-router-dom';
 import { Toast } from 'antd-mobile';
 import { getRandomString } from '../../service/service';
@@ -14,10 +15,14 @@ const PayStep2 = (props) => {
   const { userInfo, setUserPayAmount, setUserPayInfo } = props;
   const history = useHistory();
 
-  const onSubmit = async (value) => {
+  const onSubmit = async (price) => {
+    const value = numeral(price).value();
+    if (value < 5) {
+      Toast.show('充值金额最少5元');
+      return;
+    }
+
     const orderNo = getRandomString().toUpperCase() + `${new Date().getTime()}`;
-    console.log('orderNo: ', orderNo);
-    console.log('orderNo len', orderNo.length);
 
     const params = {
       merchant_id: MerchantId,
@@ -25,12 +30,11 @@ const PayStep2 = (props) => {
       usr_id: userInfo.usrId,
       order_no: orderNo,
       fee_mod: 1,
-      trade_at: value,
+      trade_at: numeral(value).format('0.00'),
     };
 
     Toast.loading('请稍候');
     const result = await fetchTradeUnified(params);
-    console.log('result: ', result);
     Toast.hide();
 
     if (result.response.code !== ResponseCode.success) {

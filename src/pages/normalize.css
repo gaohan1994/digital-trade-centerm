@@ -384,3 +384,30 @@ template {
 .ant-modal-header {
   padding: 0px !important;
 }
+
+.ant-input {
+  height: 7vw !important;
+  line-height: 7vw !important;
+  font-size: 3vw !important;
+}
+
+.am-navbar {
+  height: 13vw !important;
+}
+
+.am-navbar-title {
+  font-size: 4vw !important;
+}
+
+.header-icon {
+  width: 2vw;
+  height: 4vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('../assets/bt_back.png');
+  margin-left: 6vw;
+}
+
+.am-toast {
+  font-size: 4vw !important;
+}

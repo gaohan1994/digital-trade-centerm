@@ -26,6 +26,7 @@
 .hg-button {
   border-bottom: 0px !important;
   box-shadow: 0 0 3px -1px #aaaaaa;
+  font-size: 3vw !important;
 }
 
 .hg-button.hg-standardBtn {
@@ -123,10 +124,12 @@
 }
 
 .info-item .info-title {
-  font-size: 12px;
+  font-size: 2vw;
   color: #999999;
+  width: 15vw;
 }
 .info-item .info-value {
-  font-size: 12px;
+  font-size: 2vw;
   color: #333333;
+  text-align: right;
 }

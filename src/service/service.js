@@ -4,8 +4,19 @@ import Encrypt from 'jsencrypt';
 import { merge } from 'lodash';
 import { EncryptKeys } from './api';
 
-// const BASE_URL = 'http://ccbsz.cpay-service.com';
-const BASE_URL = 'http://139.196.226.55:8889/acps-ccb-api/v3';
+let BASE_URL = '';
+
+console.log(
+  'process.env.REACT_APP_BUILD_ENV: ',
+  process.env.REACT_APP_BUILD_ENV
+);
+if (process.env.REACT_APP_BUILD_ENV === 'production') {
+  // 生产
+  BASE_URL = 'http://ccbsz.cpay-service.com';
+} else {
+  // 测试
+  BASE_URL = 'http://139.196.226.55:8889/acps-ccb-api/v3';
+}
 
 export const getRandomString = (len) => {
   /**

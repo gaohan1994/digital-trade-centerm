@@ -34,7 +34,7 @@ const PayStep4 = (props) => {
       acq_code: AcqCode,
       usr_id: userInfo.usrId,
       order_no: userPayInfo.order_no,
-      trade_at: userPayAmount,
+      trade_at: numeral(userPayAmount).format('0.00'),
     };
     await fetchRechargePayNotice(params);
   };
