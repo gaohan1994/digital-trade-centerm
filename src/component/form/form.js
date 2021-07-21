@@ -23,6 +23,7 @@ const FormKeyboard = (props) => {
 
   // 模拟键盘输入值
   const onChange = (value) => {
+    console.log('value: ', value);
     setValue(value);
   };
 
@@ -53,6 +54,18 @@ const FormKeyboard = (props) => {
       ? ['1 2 3 {bksp}', '4 5 6 {delete}', `[7 8 9 {empty} 0 .] {enter}`]
       : ['1 2 3 {bksp}', '4 5 6 {delete}', `[7 8 9 {empty} 0 {empty}] {enter}`];
 
+  /**
+   * @param keyboardProps
+   *
+   * 自定义键盘的额外属性
+   */
+  let keyboardProps = {};
+
+  // 如果设置了位数
+  if (rest.maxLength !== undefined) {
+    keyboardProps.maxLength = rest.maxLength;
+  }
+
   return (
     <div className="keyboard-box">
       <Input value={value} onChange={onChangeInput} {...rest} />
@@ -72,6 +85,7 @@ const FormKeyboard = (props) => {
           }}
           onChange={onChange}
           onKeyPress={onKeyPress}
+          {...keyboardProps}
         />
       </div>
     </div>

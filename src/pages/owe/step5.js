@@ -44,13 +44,13 @@ const PayStep4 = (props) => {
     };
     // const params = {
     //   acq_code: AcqCode,
-    //   usr_id: '3206622491320',
-    //   order_no: 'RITZDQGKT1626747089220',
+    //   usr_id: '3206100255918',
+    //   order_no: 'K3CZMEXB61626752037685',
     //   rcvbl_info_list: [
     //     {
-    //       cost_id: '3221032400025208',
-    //       ow_amt: '6.00',
-    //       dflt_pny: '0.00',
+    //       cost_id: '3221050958680020',
+    //       ow_amt: '1.00',
+    //       dflt_pny: '1.00',
     //     },
     //   ],
     // };
