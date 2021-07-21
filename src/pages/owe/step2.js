@@ -39,8 +39,8 @@ const Step2 = (props) => {
       rcvbl_info_list: userInfo.rcvblInfoList.map((item) => {
         return {
           cost_id: item.onlyCostId,
-          ow_amt: item.owAmt,
-          dflt_pny: item.dfltPny,
+          ow_amt: numeral(item.owAmt).format('0.00'),
+          dflt_pny: numeral(item.dfltPny).format('0.00'),
         };
       }),
     };
